@@ -1,5 +1,7 @@
 # Character-Identity
 
+package com.opencsv;
+
 public class CharacterIdentity extends JFrame
 	{ 
 		
