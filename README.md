@@ -53,5 +53,34 @@ public CharacterIdentity() {
 			final JLabel entities = new JLabel("entities");
 			this.getContentPane().add(unicode, BorderLayout.NORTH);
 			this.getContentPane().add(entities, BorderLayout.SOUTH);
-			DocumentListener listener = new DocumentListener() { 
+			DocumentListener listener = new DocumentListener() {
+			
+public void insertUpdate(DocumentEvent e)
+				{
+					
+				String text = textField.getText(); 
+				int firstChar = text.charAt(0); //first letter is integer
+				String eng = facts.get(firstChar); //processes the letter character 
+				//eng = facts.get("");					
+				unicode.setText(eng + "decimal and entity: " + firstChar + " " + "&#" + firstChar + "; " +"hex and hex entity: 0x" + String.format("%04x", firstChar) + " &#x" + String.format("%04x", firstChar) + ";");  
+				//decimal and hex values shown by integer
+				
+					entities.setText(eng);
+				}
+				
+				public void removeUpdate(DocumentEvent e)
+				{
+					// TODO Auto-generated method stub
+					
+				}
+
+				public void changedUpdate(DocumentEvent e)
+				{
+			
+				}
+			   
+			};
+			textField.getDocument().addDocumentListener(listener); 
+	}
+	}
 		
