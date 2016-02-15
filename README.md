@@ -2,6 +2,8 @@
 
 package com.opencsv;
 
+import java.awt.BorderLayout;
+
 public class CharacterIdentity extends JFrame
 	{ 
 		
