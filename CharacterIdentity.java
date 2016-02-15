@@ -42,3 +42,46 @@ public class CharacterIdentity extends JFrame //creates JFrame
 		}
 		return newString;
 	}
+static ArrayList<String[]> data; //arraylist of strings called data
+	
+	
+	public static void main(String[] args){ //creates function "main"
+		
+		data = csvfile.getData(); //puts the data from the csv file into "data"
+		
+		JFrame frame = new JFrame ("project"); //names the Jframe project 
+		final JTextField textField = new JTextField(20); //creates Jtextfield, named it textField
+		frame.getContentPane().add(textField);  //puts the textfield on the content pane
+		frame.setVisible (true); //you can see it now
+		frame.setSize(500,500);  //sets dimensions
+		textField.setFont(new Font("Serif", Font.BOLD, 50));  //makes font serif, bold, size 50
+		final JLabel unicode = new JLabel ("unicode"); //creates label unicode
+		final JLabel entities = new JLabel("engdef"); //creates label engdef
+		frame.getContentPane().add(unicode, BorderLayout.NORTH); //puts the unicode label at top of contentpane
+		frame.getContentPane().add(entities, BorderLayout.SOUTH); //puts the entities label at bottom of contentpane
+		
+		DocumentListener listener = new DocumentListener() { //makes a document listener named listener
+	
+			public void insertUpdate(DocumentEvent e)   //lets the listener work correctly
+			{
+				String text = textField.getText();  //puts whatever text is put into the textfield into a varible "text
+				int firstChar = text.charAt(0); //makes the first letter an "int"
+				unicode.setText("decimal and dec entity: " + firstChar + " " + "&#" + firstChar + "; " +"hex and hex entity: 0x" + String.format("%04x", firstChar) + " &#x" + String.format("%04x", firstChar) + ";");  //makes the decimal and hex value appear for the int, and hex entity 
+				entities.setText("engdef:" + findName("0x" + String.format("%x", firstChar)) + "     alpha: " + findAlpha("0x" + String.format("%x", firstChar)) + " print in java : \\u" + String.format("%04x", firstChar) + " UTF-8: " + String.format("%x", firstChar));  //prints in bottom jlabel the engdeg, alpha, and  how to print in java
+			}
+
+		
+			public void removeUpdate(DocumentEvent e) 
+			{
+				// TODO Auto-generated method stub
+				
+			}
+
+			
+			public void changedUpdate(DocumentEvent e)
+			{
+		
+				
+			}
+			
+		};
