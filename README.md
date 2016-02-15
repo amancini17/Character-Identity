@@ -28,4 +28,12 @@ public void loadfromCSV()
 		    		 
 		    	 }
 		        // nextLine[] is the array of values from the line
+		        
+}
+			} 
+			catch(Exception e){
+				throw new RuntimeException(e); //code runs in spite of exceptions 
+			}
+		   
+		}
 		     
