@@ -85,3 +85,27 @@ static ArrayList<String[]> data; //arraylist of strings called data
 			}
 			
 		};
+		
+		textField.getDocument().addDocumentListener(listener);  //connects the textfield with the listener
+		
+	}
+	
+static String findName(String hex){ //function findname, takes in a string called "hex"
+		for (String[] line : data){  //looks in the data array list and when the column 1 hex values matches with the hex value for the letter in the textfield, print column 4 value/eng def
+			if(line[1].endsWith(hex)){
+				return line[4];  //returns eng def
+			}
+		}
+		return "";
+	}
+		
+static String findAlpha(String hex){ //function  findAlpha, takes in string value "hex"
+		for (String[] line : data){ //looks in string arrays data 
+			if(line[1].endsWith(hex)){//if column1 has a hex value that is the one for the letter in the textfield
+				return line[3];  //return column3: alpha entity 
+			}
+		}
+		return "";	
+		
+	}
+}
