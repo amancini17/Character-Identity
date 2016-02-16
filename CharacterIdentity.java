@@ -1,5 +1,10 @@
+//Sources: https://docs.oracle.com/javase/tutorial/uiswing/layout/visual.html#flow, http://stackoverflow.com/questions/5729806/encode-string-to-utf-8
+//Sources: http://stackoverflow.com/questions/4477714/how-to-convert-a-char-from-alphabetical-character-to-hexadecimal-number-in-java, http://stackoverflow.com/questions/8504615/get-unicode-value-of-character
+//Sources: https://docs.oracle.com/javase/7/docs/api/javax/swing/event/DocumentListener.html, http://stackoverflow.com/questions/5443682/how-add-a-listener-for-jtexfield-when-it-changing
+//Sources: http://mindprod.com/products1.html#ENTITIES, http://www.unicode.org/charts/charindex.html, http://stackoverflow.com/questions/13021683/adding-a-label-for-a-jtextfield
+//Source: http://stackoverflow.com/questions/25276020/listen-to-the-paste-events-jtextarea
 
-import java.awt.BorderLayout; //imports stuff that's necessary for the code to work
+import java.awt.BorderLayout; //necessary imports
 import java.awt.FlowLayout;
 import java.awt.Font;
 import java.beans.PropertyChangeEvent;
